@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="CSS/admin.css">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+
+    <!-- Jquery cdn -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <div class="section1">
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adminlogin.html">Admin</a></li>
+                <li><a href="doctorlogin.html">doctors</a></li>
+                <li><a href="receptionistlogin.html">Receptionist</a></li>
+            </ul>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-brand">
+                <h2><span></span>Admin Dashboard</h2>
+            </div>
+
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="viewpatients.html" class="active"><span class="las la-igloo"></span><span>View patients</span></a>
+                    </li>
+                    <li>
+                        <a href="addDoctor.html"><span class="las la-doctor"></span></span>Manage Doctors</span></a>
+                    </li>
+                    <li>
+                        <a href="viewappointment.html"><span class="las la-pen"></span><span>view appointments</span></a>
+                    </li>
+                    <li>
+                        <a href="addreceptionist.html"><span class="las la-pen"></span><span>Add Receptionist</span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <h2>
+                    <label for="">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Manage Doctors
+                </h2>
+
+                <div class="user-wrapper">
+                    <div>
+                        <h4>ADMIN</h4>
+                        <small>#</small>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#incomeModal">Add
+                    a doctor</button>
+
+                <br><br>
+
+                <table class="table table-dark  table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">National ID</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Marital Status</th>
+                            <th scope="col">Specialization</th>
+                            <th scope="col">Email</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody id="doctorlist">
+
+                    </tbody>
+                </table>
+                <div class="formbox1">
+
+                </div>
+
+            </main>
+
+
+
+        </div>
+    </div>
+
+    <div class="modal" id="incomeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add doctor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="fullName" class="form-control" placeholder="Full Name"> <br>
+                    <input type="text" class="form-control" id="nationalID" placeholder="ID number"><br>
+                    <input type="text" class="form-control" id="age" placeholder="Age"> <br>
+                    <input type="text" class="form-control" id="phoneNo" placeholder="Phone Number"> <br>
+                    <input type="text" class="form-control" id="email" placeholder="Email"> <br>
+                    <label for="" class="form-label">Marital Status</label>
+                    <select title="employmentType" name="" id="maritalStatus" class="form-control">
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                    </select>
+
+                    <label for="" class="form-label">Gender</label>
+                    <select name="" id="gender" class="form-control">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="" class="form-label">Specialization</label>
+                    <select name="" id="specialization" class="form-control">
+                        <option value="General doctor">General doctor</option>
+                        <option value="Surgeon">Surgeon</option>
+                        <option value="Pedetrician">pedetrician</option>
+                        <option value="Family physician">Family physician</option>
+                        <option value="Dermatologist">Dermatologist</option>
+
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="saveDoctorBtn" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="col">
+             <h4>Contact</h4>
+             <p><strong>Email: emkf@emkfoundation.org</strong></p>
+             <p><strong>Phone: 0758721985</strong></p>
+        </div>
+        
+        <div class="col">
+            <h4>Schedule</h4>
+            <p>Monday - Sunday <br><br> 24 hours</p>
+        </div>
+
+        <div class="socials">
+            <h4>Address</h4>
+            <p>Narok Town Center <br><br> p.o Box 20500</p>
+        </div>
+
+        <div class="copyright">
+            &#169 2022, Narok Referral Hospital
+        </div>
+    </footer>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+
+<script src="js/config.js"></script>
+<script src="js/addDoctor.js"></script>
+
+</html>

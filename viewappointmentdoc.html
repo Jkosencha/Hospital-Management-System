@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="CSS/appointment.css">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Jquery cdn -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="section1">
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adminlogin.html">Admin</a></li>
+                <li><a href="doctorreg.html">doctors</a></li>
+                <li><a href="receptionistlogin.html">Receptionist</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h3><b>APPOINTMENTS</b></h3>
+
+            <main>
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">National ID</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Doctor type</th>
+                            <th scope="col">Prescription</th>
+                            <th scope="col">View Prescriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentlist">
+
+                    </tbody>
+                </table>
+                <div>
+                    <span></span>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal" id="addPrescriptionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPrescriptionModalLabel">Add Prescription</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="prescriptionInput" class="form-control" placeholder="Enter patient's prescription"> <br>
+                
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="savePrescriptionBtn" class="btn btn-primary">Save Prescription</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="modal" id="viewPrescriptionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">View Prescriptions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="prescriptions" class="form-control"> <br>
+                
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Email: emkf@emkfoundation.org</strong></p>
+            <p><strong>Phone: 0758721985</strong></p>
+        </div>
+
+        <div class="col">
+            <h4>Schedule</h4>
+            <p>Monday - Sunday <br><br> 24 hours</p>
+        </div>
+
+        <div class="socials">
+            <h4>Address</h4>
+            <p>Narok Town Center <br><br> p.o Box 20500</p>
+        </div>
+
+        <div class="copyright">
+            &#169 2022, Narok Referral Hospital
+        </div>
+    </footer>
+</body>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+
+    <script src="js/config.js"></script>
+    <script src="js/viewappontment.js"></script>
+
+</html>

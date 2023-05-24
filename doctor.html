@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Doctor</title>
+
+  <link rel="stylesheet" href="CSS/style.css">
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="adminlogin.html">Admin</a></li>
+      <li><a href="doctorlogin.html">doctor</a></li>
+      <li><a href="receptionistlogin.html">Receptionist</a></li>
+    </ul>
+
+    <div class="doctordetails">
+      <p id="doctorName"></p>
+      <p id="doctorType"></p>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <h3>WELCOME DOCTOR</h3>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-dash-list" data-toggle="list"
+            href="#list-dash" role="tab">Dashboard</a>
+          <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
+            href="viewappointmentdoc.html" role="tab">View Appointments</a>
+
+        </div><br>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade  show active" id="list-dash" role="tabpanel" aria-labelledby="list-dash-list">
+            <div class="container-fluid container-fullw bg-white">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="panel panel-white no-radius text-center">
+                    <div class="panel-body">
+                      <span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i
+                          class="fa fa-bookmark fa-stack-1x fa-inverse"></i> </span>
+                      <h4 class="StepTitle"> View Appointments</h4>
+                      <script>
+                        function clickDiv(id) {
+                          document.querySelector(id).click();
+                        }
+                      </script>
+                      <p class="links cl-effect-1">
+                        <a href="viewappointmentdoc.html" onclick="clickDiv('#list-home-list')">
+                          View Appointment
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-storage.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/doctor.js"></script>
+</body>
+
+</html>
